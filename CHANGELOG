@@ -1,0 +1,32 @@
+15-068
+020315 - Added checks to parse annotation files and ensure that their format is
+suitable for the pipeline.
+
+020315 - Corrected errors that parsed chromosome
+length header incorrectly adding NAs to GRange object chromosome length fields.
+
+040315 - Added test script
+         Added check to ensure NCBI repeat files aren't gzipped.
+
+090315 - Edited file checks to allow different miRBase genome version formats and
+trailing '*' in RepeatMasker files
+         Edited manual pages
+15-069
+100315 - Edit scripts to conform with GenomicRanges > 1.10 (use of mcols etc.).
+100315 - Add R-version check to ensure R 2.15.1 or later is used.
+
+15-078
+100315 - Improve error messages
+190315 - Pipeline conforms to new Ensembl GTF layout (v77+) and can identify
+         transcript_biotype successfully in both older and current systems
+         Documentation improved to ensure -b is specified when running tRNAscan
+         and tests implemented.
+         Add example command to documentation.
+         Change order of assembly to format miRBase files.
+
+15-079
+190315 - Corrected heirarchy typo
+         File checks accept a trailing space in RepeatMasker files
+
+16-264
+280916 - Save version prior to GitHub upload
