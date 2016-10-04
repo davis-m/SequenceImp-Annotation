@@ -71,11 +71,11 @@ die "miRNA fasta file ($miRNA_fasta) does not exist\n" if (! -s $miRNA_fasta);
 
 # Read lines from files
 
-open(GFF,"< $miRNA_gff") || die "Could not open the GFF3 file\n";
+open(GFF,"gzip -cdf $miRNA_gff |") || die "Could not open the GFF3 file\n";
 my @lines = <GFF>;
 close(GFF) || die "Could not close the GFF3 file\n";
 
-open(FASTA, "gzip -cd $miRNA_fasta |") || die "Could not open the miRBase fasta file\n";
+open(FASTA, "gzip -cdf $miRNA_fasta |") || die "Could not open the miRBase fasta file\n";
 my $line_count = 0;
 my %fasta_seqs;
 my $miRNA_id = "";
