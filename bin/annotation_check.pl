@@ -208,9 +208,9 @@ sub check_a_gtf {
       }
 
       my @gene_line = split "\t";
-      die "ERROR: $genesFile line $geneLineNo - Requires 9 fields\n" if scalar (@gene_line) != 9;
-      die "ERROR: $genesFile line $geneLineNo - 4th field should be a coordinate\n" if (! $gene_line[3] =~ /^\d+$/);
-      die "ERROR: $genesFile line $geneLineNo - 5th field should be a coordinate\n" if (! $gene_line[4] =~ /^\d+$/);
+      die "ERROR: $aGTF line $geneLineNo - Requires 9 fields\n" if scalar (@gene_line) != 9;
+      die "ERROR: $aGTF line $geneLineNo - 4th field should be a coordinate\n" if (! $gene_line[3] =~ /^\d+$/);
+      die "ERROR: $aGTF line $geneLineNo - 5th field should be a coordinate\n" if (! $gene_line[4] =~ /^\d+$/);
      
 
       if (! exists($chromosome_length_temp{$gene_line[0]})){
@@ -221,7 +221,7 @@ sub check_a_gtf {
          }
       }
    }
-   close (GENES) || die "Could not close $genesFile\n";
+   close (GENES) || die "Could not close $aGTF\n";
   
    die "Haven't found a genome version for $aGTF\n" if length($found_vers) == 0;
    my @gtf_reply = (\%temp_gene_chr_crunch,\@temp_gene_coord_crunch, $found_vers);
