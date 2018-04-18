@@ -30,3 +30,8 @@ trailing '*' in RepeatMasker files
 
 16-264
 280916 - Save version prior to GitHub upload
+
+300118 - Correct mistake in the annotation-check script that used 
+         a global variable when reporting errors in the GFF format.
+         Although minor it made tracking problems in GFF files confusing.
+         (v18-108)
